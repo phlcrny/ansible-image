@@ -1,0 +1,19 @@
+{
+	"name": "Ansible",
+	"image": "phlcrny/ansible",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [
+		"vscoss.vscode-ansible",
+		"redhat.vscode-yaml",
+		"oderwat.indent-rainbow"
+	],
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	],
+	"containerEnv": {
+		// "ANSIBLE_CONFIG": "${containerWorkspaceFolder}/ansible.cfg"
+	},
+	"postCreateCommand": ""
+}
