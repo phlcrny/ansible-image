@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install ansible ansible-lint pywinrm
+RUN pip install ansible ansible-lint pywinrm paramiko
