@@ -4,7 +4,7 @@
 
 ## Introduction
 
-``Dockerfile`` to provide an isolated Ansible environment for interactive use in the command-line, Visual Studio Code's devcontainer feature, or in a CI/CD pipeline.
+Dockerfile to provide an isolated Ansible environment for interactive use in the command-line, Visual Studio Code's devcontainer feature, or in a CI/CD pipeline.
 
 ## Getting Started
 
