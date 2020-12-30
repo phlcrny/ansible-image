@@ -2,7 +2,7 @@
 name: Push to Docker
 on:
   push:
-    branches: [ master, multiplatformBuild ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
   schedule:
@@ -32,5 +32,5 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7
           push: true
-          tags: phlcrny/ansible:test
+          tags: phlcrny/ansible:latest
 ...
