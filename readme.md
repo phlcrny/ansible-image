@@ -1,6 +1,6 @@
 # phlcrny/ansible
 
-![Docker Pulls](https://img.shields.io/docker/pulls/phlcrny/ansible) ![GitHub Actions](https://img.shields.io/github/workflow/status/phlcrny/ansible-image/Push%20to%20Docker)
+[![Docker Pulls](https://img.shields.io/docker/pulls/phlcrny/ansible)](https://hub.docker.com/repository/docker/phlcrny/ansible) [![GitHub Actions](https://img.shields.io/github/workflow/status/phlcrny/ansible-image/Push%20to%20Docker)](https://github.com/phlcrny/ansible-image/actions)
 
 ## Introduction
 
