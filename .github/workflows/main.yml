@@ -3,6 +3,9 @@ name: Push to Docker
 on:
   push:
     branches: [ master ]
+    paths:
+    - 'Dockerfile'
+    - '.github/workflows/**'
   pull_request:
     branches: [ master ]
   schedule:
