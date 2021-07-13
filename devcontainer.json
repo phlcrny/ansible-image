@@ -1,19 +1,16 @@
 {
 	"name": "Ansible",
 	"image": "phlcrny/ansible",
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
+	"settings": {},
 	"extensions": [
-		"vscoss.vscode-ansible",
-		"redhat.vscode-yaml",
+		"zbr.vscode-ansible",
 		"oderwat.indent-rainbow"
 	],
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
 	],
 	"containerEnv": {
-		// "ANSIBLE_CONFIG": "${containerWorkspaceFolder}/ansible.cfg"
+		"ANSIBLE_CONFIG": "${containerWorkspaceFolder}/ansible.cfg"
 	},
-	"postCreateCommand": ""
+	"postCreateCommand": "chmod 0644 ${containerWorkspaceFolder} && ansible-galaxy install -r requirements.yml"
 }
