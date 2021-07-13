@@ -10,5 +10,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip \
-    && pip install "ansible>=${ANSIBLE_VERSION}" "ansible-lint>=4.3.6" pywinrm[kerberos] paramiko
+RUN adduser --disabled-password ansible-worker
+
+USER ansible-worker
+
+WORKDIR  /home/ansible-worker
+
+COPY --chown=worker:worker requirements.txt /home/ansible-worker/requirements.txt
+
+RUN pip install --user --upgrade pip && pip install --user -r /home/ansible-worker/requirements.txt
