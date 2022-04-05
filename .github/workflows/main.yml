@@ -29,6 +29,30 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Build and push test
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: phlcrny/ansible:$GITHUB_SHA
+
+      - name: Test ansible
+        run: |
+          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible --version
+
+      - name: Test ansible-playbook
+        run: |
+          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-playbook --version
+
+      - name: Test ansible-galaxy
+        run: |
+          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-galaxy --version
+
+      - name: Test ansible-lint
+        run: |
+          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-lint --version
+
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
