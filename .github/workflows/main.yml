@@ -35,23 +35,23 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: phlcrny/ansible:$GITHUB_SHA
+          tags: phlcrny/ansible:${{ GITHUB_SHA }}
 
       - name: Test ansible
         run: |
-          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible --version
+          docker run --rm phlcrny/ansible:${{ GITHUB_SHA }} ansible --version
 
       - name: Test ansible-playbook
         run: |
-          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-playbook --version
+          docker run --rm phlcrny/ansible:${{ GITHUB_SHA }} ansible-playbook --version
 
       - name: Test ansible-galaxy
         run: |
-          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-galaxy --version
+          docker run --rm phlcrny/ansible:${{ GITHUB_SHA }} ansible-galaxy --version
 
       - name: Test ansible-lint
         run: |
-          docker run --rm phlcrny/ansible:$GITHUB_SHA ansible-lint --version
+          docker run --rm phlcrny/ansible:${{ GITHUB_SHA }} ansible-lint --version
 
       - name: Build and push
         uses: docker/build-push-action@v2
