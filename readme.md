@@ -40,7 +40,7 @@ Below is a basic example for use with ``gitlab-ci`` but this should be transfera
 # .gitlab-ci.yml
 
 ---
-image: phlcrny/ansible
+image: phlcrny/ansible:2.14
 
 stages:
   - test
