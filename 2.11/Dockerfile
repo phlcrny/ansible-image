@@ -2,7 +2,7 @@ FROM python:3.11-alpine
 
 LABEL maintainer="Phil Carney (phlcrny)"
 
-RUN apk update && apk add --no-cache build-base libffi-dev openssh git
+RUN apk update && apk add --no-cache build-base libffi-dev openssh sshpass git
 
 ENV ANSIBLE='4.7'
 ENV ANSIBLE_CORE='2.11'
