@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Dockerfile to provide an isolated Ansible environment for interactive use in the command-line, Visual Studio Code's devcontainer feature, or in a CI/CD pipeline.
+Dockerfile to provide an isolated Ansible environment for interactive use in a CI/CD pipeline, interactively, or as the base for a VS Code Dev Container.
 
 ## Getting Started
 
@@ -29,14 +29,8 @@ docker build -t phlcrny/ansible github.com/phlcrny/ansible-image
 Running from the command-line as below allows for ad-hoc commands, and mounts the current directory for interactive usage and testing of playbooks
 
 ```bash
-docker run -it --rm -v "${PWD}:/ansible" -w=/ansible --entrypoint=/bin/bash phlcrny/ansible
+docker run -it --rm -v "${PWD}:/workingDir" -w=/workingDir phlcrny/ansible
 ```
-
-#### Visual Studio Code devcontainer
-
-1. Install and configure the [Visual Studio Code Remote - Containers](https://code.visualstudio.com/docs/remote/containers) extension
-1. Copy ``devcontainer.json`` to ``.vscode\devcontainer.json`` or ``.devcontainer.json``
-1. Update and customise as required
 
 #### CI/CD
 
