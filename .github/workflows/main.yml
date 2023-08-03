@@ -11,7 +11,7 @@ jobs:
   docker:
     strategy:
       matrix:
-        version: [ 2.11, 2.14 ]
+        version: [ 2.11, 2.14, 2.15 ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
